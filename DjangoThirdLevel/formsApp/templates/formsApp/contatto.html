@@ -16,42 +16,32 @@
       <br>
       <br>
       <form action='' method="POST">
-          {% csrf_token %}
-        <div class="row">
-            <label for="nome">Nome:</label>
-            <div class="col-md-5" name="nome">
+            {% csrf_token %}
+            <div class="row">
+              <label for="nome">Nome:</label>
+              <div class="col" name="nome">
                 {{ form.nome }}
+              </div>
+              <label for="cognome">Cognome:</label>
+              <div class="col" name="cognome">
+                  {{ form.cognome }}
+              </div>
             </div>
-            <br>
-            <label for="cognome">Cognome:</label>
-            <div class="col-md-5" name="cognome">
-                {{ form.cognome }}
+            <div class="row">
+              <label for="email">Email:</label>
+              <div class="col" name="email">
+                  {{ form.email }}
+              </div>
+              <label for="contenuto">Contenuto:</label>
+              <div class="col" name="contenuto" >
+                  {{ form.contenuto }} 
+              </div>
             </div>
-            <br>
-            <div class="col-md-2">
-              
+            <div class="row">
+                  <div class="col">
+                      <input type="submit" class = "btn btn-danger" value="Invia!">
+                  </div>
             </div>
-        </div>
-        <div class="row}">
-            <label for="email">Email:</label>
-            <div class="col-md-5" name="email">
-                {{ form.email }}
-            </div>
-            <br>
-            <label for="contenuto">Contenuto:</label>
-            <div class="col-md-5" name="contenuto">
-                {{ form.contenuto }}
-            </div>
-            <br>
-            <div class="col-md-2">
-              
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-5">
-               <input type="submit" class = "btn btn-danger" value="Invia!">
-            </div>
-        </div>
       </form>
     </div>
     <!-- Optional JavaScript; choose one of the two! -->
