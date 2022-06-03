@@ -3,9 +3,12 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from .forms import FormContatto
 # Create your views here.
+
 def homepage(request):
     return render(request,'formsApp/home.html')
-
+""" def contatti(request):
+    return render(request,'formsApp/contatto.html')
+ """
 def contatti(request):
     if request.method == 'POST':
         form = FormContatto(request.POST)
