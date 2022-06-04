@@ -15,33 +15,21 @@
       <h1>Compila il form di contatto, ti risponderemo quanto prima!</h1>
       <br>
       <br>
-      <form action='' method="POST">
-            {% csrf_token %}
-            <div class="row">
-              <label for="nome">Nome:</label>
-              <div class="col" name="nome">
-                {{ form.nome }}
-              </div>
-              <label for="cognome">Cognome:</label>
-              <div class="col" name="cognome">
-                  {{ form.cognome }}
-              </div>
+      <form action="" method="POST" novalidate>
+        {% csrf_token %}
+        {% for field in form %}
+            <div class="my-3">
+                {{ field.errors }}
+                {{ field.label_tag }}
+                {{ field }}
             </div>
-            <div class="row">
-              <label for="email">Email:</label>
-              <div class="col" name="email">
-                  {{ form.email }}
-              </div>
-              <label for="contenuto">Contenuto:</label>
-              <div class="col" name="contenuto" >
-                  {{ form.contenuto }} 
-              </div>
+        {% endfor %}
+        <br>
+        <div class="row">
+            <div class="col">
+                <input type="submit" class = "btn btn-danger" value="Invia!">
             </div>
-            <div class="row">
-                  <div class="col">
-                      <input type="submit" class = "btn btn-danger" value="Invia!">
-                  </div>
-            </div>
+        </div>
       </form>
     </div>
     <!-- Optional JavaScript; choose one of the two! -->
