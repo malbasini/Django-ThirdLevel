@@ -39,7 +39,12 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'formsApp',
     'blog',
+    "crispy_forms",
+    "crispy_bootstrap5",
 ]
+
+CRISPY_TEMPLATE_PACK = "bootstrap5"
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -52,6 +57,7 @@ MIDDLEWARE = [
 ROOT_URLCONF = 'DjangoThirdLevel.urls'
 TEMPLATES = [
     {
+        
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [BASE_DIR , '/formsApp/templates',
                 BASE_DIR , '/blog/templates'],
@@ -66,6 +72,8 @@ TEMPLATES = [
         },
     },
 ]
+
+
 
 WSGI_APPLICATION = 'DjangoThirdLevel.wsgi.application'
 

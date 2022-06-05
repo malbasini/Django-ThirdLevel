@@ -1,3 +1,4 @@
+{% load crispy_forms_tags %}
 <!doctype html>
 <html lang="en">
   <head>
@@ -14,17 +15,11 @@
     <div class="container">
       <h1>Crea il tuo post!</h1>
       <br>
-      <br>
       <form action="" method="POST" novalidate>
         {% csrf_token %}
-        {% for field in form %}
-            <div class="my-3">
-                {{ field.errors }}
-                {{ field.label_tag }}
-                {{ field }}
-            </div>
-        {% endfor %}
-        <br>
+        <div class="my-3">
+            {{ form|crispy }}
+        </div>
         <div class="row">
             <div class="col">
                 <input type="submit" class = "btn btn-danger" value="Invia!">
