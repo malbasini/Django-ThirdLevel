@@ -17,6 +17,8 @@ class FormContatto(forms.Form):
         attrs={"placeholder": "Area Testuale! Scrivi pure!", "class": "form-control","style":"width:500px;" }),
         validators=[validators.MinLengthValidator(10)])
 
+
+    #Sovrascrittura metodo clean
     def clean_contenuto(self):
         dati = self.cleaned_data["contenuto"]
         if "parola" in dati:

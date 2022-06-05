@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'formsApp',
+    'blog',
 ]
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -52,7 +53,8 @@ ROOT_URLCONF = 'DjangoThirdLevel.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR , '/formsApp/templates'],
+        'DIRS': [BASE_DIR , '/formsApp/templates',
+                BASE_DIR , '/blog/templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

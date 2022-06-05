@@ -16,9 +16,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from formsApp.views import homepage,contatti
-
+from blog.views import creaPostView
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', homepage, name='homepage'),
     path('contattaci/', contatti, name='contatti'),
+    path('blog/', creaPostView, name='creaPost'),
 ]
