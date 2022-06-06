@@ -1,6 +1,9 @@
 from django import forms
 from .models import BlogPostModel
 from django.contrib.auth.models import User
+
+
+
 class BlogPostModelForm(forms.ModelForm):
     
     class Meta():
@@ -22,10 +25,10 @@ class FormRegistrazioneUser(forms.ModelForm):
     def clean(self):
         """https://docs.djangoproject.com/en/dev/ref/forms/validation/#cleaning-and-validating-fields-that-depend-on-each-other"""
         super().clean()
-        password = self.cleaned_data["password"]
-        conferma_password = self.cleaned_data["conferma_password"]
+        password = self.cleaned_data.get("password")
+        conferma_password = self.cleaned_data.get("conferma_password")
         if password != conferma_password:
-            raise forms.ValidationError("Le password non combaciano!")
+           raise forms.ValidationError("Le password non combaciano!")
         return self.cleaned_data
 
         
